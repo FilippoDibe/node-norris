@@ -33,6 +33,22 @@ const saveJokesToJson = (jokes) => {
     }
 };
 
+// funzioe per creare una frase carina in html
+const styleHtmlJoke = (joke) => {
+    return `
+    <html>
+        <head>
+            <title>Chuck Norris Joke</title>
+        </head>
+        <body>
+            <h1>Chuck Norris Joke</h1>
+            <h3>${joke}</h3>
+        </body>
+    </html>
+`;
+};
+
+
 // Creazione del server
 const server = http.createServer(async (req, res) => {
     if (req.url === '/') {
@@ -46,14 +62,14 @@ const server = http.createServer(async (req, res) => {
 
             // Salva le battute aggiornate
             saveJokesToJson(jokes); 
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ joke }));
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(styleHtmlJoke(joke));
         } else {
-            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            res.writeHead(500, { 'Content-Type': 'text/html' });
             res.end('Errore nel recupero della battuta!');
         }
     } else {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.writeHead(404, { 'Content-Type': 'text/html' });
         res.end('Not Found');
     }
 });
