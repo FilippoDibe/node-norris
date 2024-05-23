@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/FilippoDibe/node-norris#readme",
   "dependencies": {
+    "node-fetch": "^3.3.2",
     "nodemon": "^3.1.0"
   },
-  "nodemonConfig": { 
-    "ignore": ["norrisDb.json"] 
-  } 
+  "nodemonConfig": {
+    "ignore": [
+      "norrisDb.json"
+    ]
+  }
 }
