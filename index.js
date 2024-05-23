@@ -36,15 +36,8 @@ const saveJokesToJson = (jokes) => {
 // funzioe per creare una frase carina in html
 const styleHtmlJoke = (joke) => {
     return `
-    <html>
-        <head>
-            <title>Chuck Norris Joke</title>
-        </head>
-        <body>
-            <h1>Chuck Norris Joke</h1>
-            <h3>${joke}</h3>
-        </body>
-    </html>
+        <h1>Chuck Norris Joke</h1>
+        <h3>${joke}</h3>
 `;
 };
 
